@@ -10,6 +10,7 @@ fonttools==4.38.0
 ipykernel==6.17.1
 ipython==8.6.0
 jedi==0.18.1
+joblib==1.2.0
 jupyter_client==7.4.5
 jupyter_core==5.0.0
 kiwisolver==1.4.4
@@ -34,6 +35,7 @@ pyparsing==3.0.9
 python-dateutil==2.8.2
 pytz==2022.6
 pyzmq==24.0.1
+seaborn==0.12.1
 six==1.16.0
 stack-data==0.6.1
 tornado==6.2
