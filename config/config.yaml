@@ -19,8 +19,8 @@ path_valid_feat:
 path_test_feat:
 - ../data/processed/x_test_feat.pkl
 - ../data/processed/y_test_feat.pkl
-final_model_path: models/production_model.pkl
-training_log_path: log/training_log.json
+final_model_path: ../models/production_model.pkl
+training_log_path: ../log/training_log.json
 
 # Nama Kolom
 new_cols:
