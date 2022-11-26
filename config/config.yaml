@@ -1,0 +1,80 @@
+# path
+data_raw: ../data/raw/smoke.csv
+data_final: ../data/processed/ori_new.pkl
+path_train:
+- ../data/processed/x_train.pkl
+- ../data/processed/y_train.pkl
+path_valid:
+- ../data/processed/x_valid.pkl
+- ../data/processed/y_valid.pkl
+path_test:
+- ../data/processed/x_test.pkl
+- ../data/processed/y_test.pkl
+path_train_feat:
+- data/processed/x_train_feat.pkl
+- data/processed/y_train_feat.pkl
+path_valid_feat:
+- data/processed/x_valid_feat.pkl
+- data/processed/y_valid_feat.pkl
+path_test_feat:
+- data/processed/x_test_feat.pkl
+- data/processed/y_test_feat.pkl
+final_model_path: models/production_model.pkl
+training_log_path: log/training_log.json
+
+# Nama Kolom
+new_cols:
+- UTC
+- Temperature
+- Humidity
+- TVOC
+- eCO2
+- Raw_H2
+- Raw_Ethanol
+- Pressure
+- PM1.0
+- PM2.5
+- NC0.5
+- NC1.0
+- NC2.5
+- CNT
+- Fire_Alarm
+
+
+
+
+# tipe data
+datetime_columns:
+- UTC
+float_columns:
+- Temperature
+- Humidity
+- Pressure
+- PM1.0
+- PM2.5
+- NC0.5
+- NC1.0
+- NC2.5
+int_columns:
+- TVOC
+- eCO2
+- Raw_H2
+- Raw_Ethanol
+- CNT
+- Fire_Alarm
+
+# Predictors and target
+target: Fire_Alarm
+predictors:
+- Temperature
+- Humidity
+- TVOC
+- eCO2
+- Raw_H2
+- Raw_Ethanol
+- Pressure
+- PM1.0
+
+# Ratio Split
+test_size: 0.3
+valid_size: 0.5
