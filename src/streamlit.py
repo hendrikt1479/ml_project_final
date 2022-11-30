@@ -10,7 +10,7 @@ from PIL import Image
 
 # Add some information about the service
 st.title('Prediksi Kebakaran :fire:')
-st.subheader('Just enter variabel below then click Predict button :sunglasses:')
+st.subheader('Isi data data berikut')
 
 # Create form of input
 with st.form(key = 'air_data_form'):
