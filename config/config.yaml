@@ -1,26 +1,26 @@
 # path
-data_raw: ../data/raw/smoke.csv
-data_final: ../data/processed/ori_new.pkl
+data_raw: data/raw/smoke.csv
+data_final: data/processed/ori_new.pkl
 path_train:
-- ../data/processed/x_train.pkl
-- ../data/processed/y_train.pkl
+- data/processed/x_train.pkl
+- data/processed/y_train.pkl
 path_valid:
-- ../data/processed/x_valid.pkl
-- ../data/processed/y_valid.pkl
+- data/processed/x_valid.pkl
+- data/processed/y_valid.pkl
 path_test:
-- ../data/processed/x_test.pkl
-- ../data/processed/y_test.pkl
+- data/processed/x_test.pkl
+- data/processed/y_test.pkl
 path_train_feat:
-- ../data/processed/x_train_feat.pkl
-- ../data/processed/y_train_feat.pkl
+- data/processed/x_train_feat.pkl
+- data/processed/y_train_feat.pkl
 path_valid_feat:
-- ../data/processed/x_valid_feat.pkl
-- ../data/processed/y_valid_feat.pkl
+- data/processed/x_valid_feat.pkl
+- data/processed/y_valid_feat.pkl
 path_test_feat:
-- ../data/processed/x_test_feat.pkl
-- ../data/processed/y_test_feat.pkl
-final_model_path: ../models/production_model.pkl
-training_log_path: ../log/training_log.json
+- data/processed/x_test_feat.pkl
+- data/processed/y_test_feat.pkl
+final_model_path: models/production_model.pkl
+training_log_path: log/training_log.json
 
 # Nama Kolom
 new_cols:
