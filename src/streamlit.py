@@ -11,8 +11,8 @@ col1, col2 = st.columns(2)
 header_images = Image.open('images/images.jpg')
 col1.image(header_images)
 
-col2.write("Project :")
-col2.write("Nama : Hendrik Tanaka")
+col2.write("Project : ML Process")
+col2.write("Nama    : Hendrik Tanaka")
 
 
 # Load and set images in the first place
