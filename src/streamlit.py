@@ -9,7 +9,7 @@ from PIL import Image
 # st.image(header_images)
 
 # Add some information about the service
-st.title('Smoke Prediction')
+st.title('Prediksi Kebakaran :fire:')
 st.subheader('Just enter variabel below then click Predict button :sunglasses:')
 
 # Create form of input
