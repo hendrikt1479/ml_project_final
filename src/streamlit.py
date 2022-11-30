@@ -9,8 +9,8 @@ header_images = Image.open('images/images.jpg')
 st.image(header_images)
 
 col1, col2 = st.columns(2)
-with col2:
-    my_component(greeting="hello")
+# with col2:
+#     my_component(greeting="hello")
 
 # Add some information about the service
 st.title('Prediksi Kebakaran :fire:')
