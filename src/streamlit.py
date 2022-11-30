@@ -7,6 +7,10 @@ from PIL import Image
 # Add some information about the service
 st.title('Prediksi Kebakaran :fire:')
 
+col1, col2 = st.columns(2)
+col1.write("This is column 1")
+col2.write("This is column 2")
+
 # Load and set images in the first place
 header_images = Image.open('images/images.jpg')
 st.image(header_images)
