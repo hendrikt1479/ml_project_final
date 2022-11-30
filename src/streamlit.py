@@ -5,7 +5,7 @@ import joblib
 from PIL import Image
 
 # Load and set images in the first place
-header_images = Image.open('images/banner.png')
+header_images = Image.open('images/images.jpg')
 st.image(header_images)
 
 # Add some information about the service
