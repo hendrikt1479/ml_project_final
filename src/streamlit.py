@@ -5,8 +5,8 @@ import joblib
 from PIL import Image
 
 # Load and set images in the first place
-# header_images = Image.open('assets/banner.png')
-# st.image(header_images)
+header_images = Image.open('images/banner.png')
+st.image(header_images)
 
 # Add some information about the service
 st.title('Prediksi Kebakaran :fire:')
