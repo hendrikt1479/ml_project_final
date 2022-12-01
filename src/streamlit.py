@@ -15,6 +15,29 @@ col2.write("Project : ML Process")
 col2.write("Nama    : Hendrik Tanaka")
 
 
+
+
+
+with st.form(key = 'air_data_form'):
+    col1, col2 = st.columns(2)
+    # Create box for number input
+    temperature = col1.st.number_input(
+        label = '1.\tEnter Temperature[C] Value:',
+        min_value = -40,
+        max_value = 125,
+        help = 'Value range from -40 to 125'
+    )
+
+    humidity = st.number_input(
+        label = '2.\tEnter Humidity[%] Value:',
+        min_value = 0,
+        max_value = 100,
+        help = 'Value range from 0 to 100'
+    )
+
+
+
+
 # Load and set images in the first place
 
 
