@@ -21,7 +21,7 @@ col2.write("Nama    : Hendrik Tanaka")
 with st.form(key = 'air_data_form'):
     col1, col2 = st.columns(2)
     # Create box for number input
-    temperature = col1.st.number_input(
+    temperature = st.number_input(
         label = '1.\tEnter Temperature[C] Value:',
         min_value = -40,
         max_value = 125,
