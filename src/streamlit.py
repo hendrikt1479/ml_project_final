@@ -34,7 +34,8 @@ with st.form(key = 'air_data_form'):
         max_value = 100,
         help = 'Value range from 0 to 100'
     )
-
+    # Create button to submit the form
+    submitted = st.form_submit_button('Predict')
 
 
 
