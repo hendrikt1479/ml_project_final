@@ -88,7 +88,7 @@ with st.form(key = "kebakaran_form"):
 
 
     # Create button to submit the form
-    submitted = st.form_submit_button("Predict")
+    submitted = col3.form_submit_button("Predict")
 
 
     # Condition when form submitted
@@ -106,12 +106,12 @@ with st.form(key = "kebakaran_form"):
         }
 
         # Create loading animation while predicting
-        with st.spinner("Sending data to prediction server ..."):
+        with st.spinner("Mengirim data ke server ..."):
             res = requests.post("http://api_backend:8080/predict", json = raw_data).json()
             
         # Parse the prediction result
         if res["error_msg"] != "":
-            st.error("Error Occurs While Predicting: {}".format(res["error_msg"]))
+            st.error("Error saat memprediksi: {}".format(res["error_msg"]))
         else:
             if res["res"] != "Tidak ada api.":
                 st.warning("Ada api.")
