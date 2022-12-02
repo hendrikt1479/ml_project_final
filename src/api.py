@@ -4,13 +4,15 @@ import uvicorn
 import pandas as pd
 import numpy as np
 import yaml
+import joblib
 
-import data_pipeline as data_pipeline
-import preprocessing as preprocessing
+import step1 as data_pipeline
+import step2 as preprocessing
+import step3 as modelling
 
-
-config = utils.load_config()
-model_data = utils.pickle_load(config["production_model_path"])
+with open("config/config.yaml", "r") as file:
+    config = yaml.safe_load(file)
+model_data = joblib.load(modelling.dtc, config["final_model_path"])
 
 class api_data(BaseModel):
     Temperature : float
