@@ -45,6 +45,7 @@ with st.form(key = "kebakaran_form"):
 
     tvoc = col1.number_input(
         label = "TVOC [ppb] :",
+        step = 0.1
         # min_value = 0,
         # max_value = 60000,
         # help = "Value range from 0 to 60000"
@@ -52,6 +53,7 @@ with st.form(key = "kebakaran_form"):
 
     eco2 = col2.number_input(
         label = "eCO2 [ppm] :",
+        step = 0.1
         # min_value = 400,
         # max_value = 60000,
         # help = "Value range from 400 to 60000"
@@ -59,6 +61,7 @@ with st.form(key = "kebakaran_form"):
 
     h2 = col2.number_input(
         label = "Raw H2 :",
+        step = 0.1
         # min_value = 0,
         # max_value = 60000,
         # help = "Value range from 0 to 60000"
@@ -66,6 +69,7 @@ with st.form(key = "kebakaran_form"):
 
     ethanol = col2.number_input(
         label = "Raw Ethanol :",
+        step = 0.1
         # min_value = 0,
         # max_value = 60000,
         # help = "Value range from 0 to 60000"
@@ -73,6 +77,7 @@ with st.form(key = "kebakaran_form"):
 
     pressure = col3.number_input(
         label = "Pressure [hPa] :",
+        step = 0.1
         # min_value = 300,
         # max_value = 1250,
         # help = "Value range from 300 to 1250"
@@ -80,6 +85,7 @@ with st.form(key = "kebakaran_form"):
 
     pm1 = col3.number_input(
         label = "PM1.0 :",
+        step = 0.1
         # min_value = 0,
         # max_value = 65535,
         # help = "Value range from 0 to 65535"
