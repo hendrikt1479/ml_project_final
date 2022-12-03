@@ -36,7 +36,7 @@ def home():
     return "Hello, FastAPI up!"
 
 @app.post("/predict/")
-def predict(data: api_data):    
+def predict(data : api_data):    
     # Convert data api to dataframe
     # data = pd.DataFrame(data).set_index(0).T.reset_index(drop = True)  # type: ignore
     # data.columns = config["predictors"]
@@ -65,7 +65,7 @@ def predict(data: api_data):
     #     y_pred = "Ada api."
 
     # return {"res" : y_pred, "error_msg": ""}
-    return {"res":9999999999999}
+    return data
 
 if __name__ == "__main__":
     uvicorn.run("api:app", host = "0.0.0.0", port = 8080)
