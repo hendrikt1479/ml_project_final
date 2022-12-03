@@ -111,13 +111,13 @@ with st.form(key = "kebakaran_form"):
 
         # Create loading animation while predicting
         with st.spinner("Mengirim data ke server ..."):
-        #     res = requests.post("http://localhost:8080/predict/", json = raw_data).json()
+            res = requests.post("http://localhost:8080/predict/", json = raw_data).json()
             
-        # # Parse the prediction result
-        # if res["error_msg"] != "":
-        #     st.error("Error saat memprediksi: {}".format(res["error_msg"]))
-        # else:
-        #     if res["res"] != "Tidak ada api.":
-        #         st.warning("Ada api.")
-        #     else:
-        #         st.success("Tidak ada api.")
+        # Parse the prediction result
+        if res["error_msg"] != "":
+            st.error("Error saat memprediksi: {}".format(res["error_msg"]))
+        else:
+            if res["res"] != "Tidak ada api.":
+                st.warning("Ada api.")
+            else:
+                st.success("Tidak ada api.")
