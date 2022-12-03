@@ -12,7 +12,7 @@ import step3 as modelling
 
 with open("config/config.yaml", "r") as file:
     config = yaml.safe_load(file)
-model_data = joblib.load(modelling.dtc, config["final_model_path"])
+model_data = joblib.load(config["final_model_path"])
 
 class api_data(BaseModel):
     Temperature : float
