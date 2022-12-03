@@ -26,8 +26,6 @@ with st.form(key = "kebakaran_form"):
     col1, col2, col3 = st.columns(3)
     # Create box for number input
     temperature = col1.number_input(
-
-
         label = "Temperature [C] :",
         step = 0.1
         # min_value = -40,
@@ -113,13 +111,13 @@ with st.form(key = "kebakaran_form"):
 
         # Create loading animation while predicting
         with st.spinner("Mengirim data ke server ..."):
-            res = requests.post("http://api_backend:8080/predict", json = raw_data).json()
+        #     res = requests.post("http://localhost:8080/predict/", json = raw_data).json()
             
-        # Parse the prediction result
-        if res["error_msg"] != "":
-            st.error("Error saat memprediksi: {}".format(res["error_msg"]))
-        else:
-            if res["res"] != "Tidak ada api.":
-                st.warning("Ada api.")
-            else:
-                st.success("Tidak ada api.")
+        # # Parse the prediction result
+        # if res["error_msg"] != "":
+        #     st.error("Error saat memprediksi: {}".format(res["error_msg"]))
+        # else:
+        #     if res["res"] != "Tidak ada api.":
+        #         st.warning("Ada api.")
+        #     else:
+        #         st.success("Tidak ada api.")
