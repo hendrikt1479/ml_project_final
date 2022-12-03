@@ -28,7 +28,7 @@ with st.form(key = "kebakaran_form"):
     # Create box for number input
     temperature = col1.number_input(
         label = "Temperature [C] :",
-        step = 0.1
+        step = 1
         # min_value = -40,
         # max_value = 125,
         # help = "Value range from -40 to 125"
@@ -36,7 +36,7 @@ with st.form(key = "kebakaran_form"):
 
     humidity = col1.number_input(
         label = "Humidity [%] :",
-        step = 0.1
+        step = 1
         # min_value = 0,
         # max_value = 100,
         # help = "Value range from 0 to 100"
@@ -76,7 +76,7 @@ with st.form(key = "kebakaran_form"):
 
     pressure = col3.number_input(
         label = "Pressure [hPa] :",
-        step = 0.1
+        step = 1
         # min_value = 300,
         # max_value = 1250,
         # help = "Value range from 300 to 1250"
@@ -84,7 +84,7 @@ with st.form(key = "kebakaran_form"):
 
     pm1 = col3.number_input(
         label = "PM1.0 :",
-        step = 0.1
+        step = 1
         # min_value = 0,
         # max_value = 65535,
         # help = "Value range from 0 to 65535"
@@ -112,7 +112,12 @@ with st.form(key = "kebakaran_form"):
 
         # Create loading animation while predicting
         with st.spinner("Mengirim data ke server ..."):
-            res = requests.post("http://localhost:8080/predict/", json = raw_data).json()
+            res = requests.post("http://localhost:8080/predict", json = raw_data)
+            res = res.json()
+            # res = requests.post("http://localhost:8080/predict/", json = {"raw_data":9999})
+            # res = requests.post("http://localhost:8080/predict/", json = raw_data)
+           
+            
             
         # # Parse the prediction result
         # if res["error_msg"] != "":
@@ -123,4 +128,9 @@ with st.form(key = "kebakaran_form"):
         #     else:
         #         st.success("Tidak ada api-streamlit.")
 
-        st.success(res)
+            # if res["res"] == 0:
+            #     st.warning("Ada api-streamlit.")
+            # else:
+            #     st.success("Tidak ada api-streamlit.")
+            
+            st.success(res)
