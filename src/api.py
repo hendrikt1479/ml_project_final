@@ -38,7 +38,7 @@ def home():
 @app.post("/predict/")
 def predict(data : api_data):    
     # Convert data api to dataframe
-    # data = pd.DataFrame(data).set_index(0).T.reset_index(drop = True)  # type: ignore
+    data = pd.DataFrame(data).set_index(0).T.reset_index(drop = True)  # type: ignore
     # data.columns = config["predictors"]
 
     # # Convert dtype
