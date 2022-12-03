@@ -1,8 +1,6 @@
 import streamlit as st
 import requests
-import yaml
-import joblib
-import json
+import pandas as pd
 from PIL import Image
 
 # Add some information about the service
@@ -100,20 +98,22 @@ with st.form(key = "kebakaran_form"):
     if submitted:
         # Create dict of all data in the form
         raw_data = {
-            "Temperature": temperature,
-            "Humidity": humidity,
-            "Pressure": pressure,
-            "PM1": pm1,
-            "TVOC": tvoc,
-            "eCO2": eco2,
-            "H2": h2,
-            "Ethanol": ethanol
+            "Temperature" : temperature ,
+            "Humidity" : humidity ,
+            "Pressure" : pressure ,
+            "PM10" : pm1 ,
+            "TVOC" : tvoc ,
+            "eCO2" : eco2 ,
+            "Raw_H2" : h2 ,
+            "Raw_Ethanol" : ethanol
         }
+
+        # raw_data = pd.DataFrame(raw_data).set_index(0).T.reset_index(drop = True)
 
         # Create loading animation while predicting
         with st.spinner("Mengirim data ke server ..."):
             result = requests.post("http://localhost:8080/predict/", json = raw_data)
-            result = result.json()
+            # result = result.json()
 
            
             
@@ -132,4 +132,4 @@ with st.form(key = "kebakaran_form"):
             # else:
             #     st.success("Tidak ada api-streamlit.")
             
-        st.warning(raw_data)
+        st.warning(result)

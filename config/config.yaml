@@ -32,11 +32,11 @@ new_cols:
 - Raw_H2
 - Raw_Ethanol
 - Pressure
-- PM1.0
-- PM2.5
-- NC0.5
-- NC1.0
-- NC2.5
+- PM10
+- PM25
+- NC05
+- NC10
+- NC25
 - CNT
 - Fire_Alarm
 
@@ -50,11 +50,11 @@ float_columns:
 - Temperature
 - Humidity
 - Pressure
-- PM1.0
-- PM2.5
-- NC0.5
-- NC1.0
-- NC2.5
+- PM10
+- PM25
+- NC05
+- NC10
+- NC25
 int_columns:
 - TVOC
 - eCO2
@@ -73,7 +73,7 @@ predictors:
 - Raw_H2
 - Raw_Ethanol
 - Pressure
-- PM1.0
+- PM10
 
 # Ratio Split
 test_size: 0.3

@@ -16,14 +16,14 @@ with open("config/config.yaml", "r") as file:
 model_data = joblib.load(config["final_model_path"])
 
 class api_data(BaseModel):
-    Temperature : int
-    Humidity : int
-    Pressure : int
-    PM1 : int
+    Temperature : int 
+    Humidity : int 
+    Pressure : int 
+    PM10 : int 
     TVOC : int
     eCO2 : int
-    H2 : int
-    Ethanol : int
+    Raw_H2 : int
+    Raw_Ethanol : int
 
  
     
@@ -38,8 +38,8 @@ def home():
 @app.post("/predict/")
 def predict(data : api_data):    
     # Convert data api to dataframe
-    data = pd.DataFrame(data).set_index(0).T.reset_index(drop = True)  # type: ignore
-    # data.columns = config["predictors"]
+    data = pd.DataFrame([data], index=[0]) #.T.reset_index(drop = True)  # type: ignore
+    data.columns = config["predictors"]
 
     # # Convert dtype
     # data = pd.concat(
