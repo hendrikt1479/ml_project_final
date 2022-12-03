@@ -2,6 +2,7 @@ import streamlit as st
 import requests
 import yaml
 import joblib
+import json
 from PIL import Image
 
 # Add some information about the service
@@ -43,7 +44,7 @@ with st.form(key = "kebakaran_form"):
 
     tvoc = col1.number_input(
         label = "TVOC [ppb] :",
-        step = 0.1
+        step = 1
         # min_value = 0,
         # max_value = 60000,
         # help = "Value range from 0 to 60000"
@@ -51,7 +52,7 @@ with st.form(key = "kebakaran_form"):
 
     eco2 = col2.number_input(
         label = "eCO2 [ppm] :",
-        step = 0.1
+        step = 1
         # min_value = 400,
         # max_value = 60000,
         # help = "Value range from 400 to 60000"
@@ -59,7 +60,7 @@ with st.form(key = "kebakaran_form"):
 
     h2 = col2.number_input(
         label = "Raw H2 :",
-        step = 0.1
+        step = 1
         # min_value = 0,
         # max_value = 60000,
         # help = "Value range from 0 to 60000"
@@ -67,7 +68,7 @@ with st.form(key = "kebakaran_form"):
 
     ethanol = col2.number_input(
         label = "Raw Ethanol :",
-        step = 0.1
+        step = 1
         # min_value = 0,
         # max_value = 60000,
         # help = "Value range from 0 to 60000"
@@ -113,11 +114,13 @@ with st.form(key = "kebakaran_form"):
         with st.spinner("Mengirim data ke server ..."):
             res = requests.post("http://localhost:8080/predict/", json = raw_data).json()
             
-        # Parse the prediction result
-        if res["error_msg"] != "":
-            st.error("Error saat memprediksi: {}".format(res["error_msg"]))
-        else:
-            if res["res"] != "Tidak ada api.":
-                st.warning("Ada api.")
-            else:
-                st.success("Tidak ada api.")
+        # # Parse the prediction result
+        # if res["error_msg"] != "":
+        #     st.error("Error saat memprediksi: {}".format(res["error_msg"]))
+        # else:
+        #     if res["res"] == "0":
+        #         st.warning("Ada api-streamlit.")
+        #     else:
+        #         st.success("Tidak ada api-streamlit.")
+
+        st.success(res)

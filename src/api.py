@@ -5,11 +5,13 @@ import pandas as pd
 import numpy as np
 import yaml
 import joblib
+import json
 
 import step1 as data_pipeline
 import step2 as preprocessing
 import step3 as modelling
 
+# load config & model
 with open("config/config.yaml", "r") as file:
     config = yaml.safe_load(file)
 model_data = joblib.load(config["final_model_path"])
@@ -34,7 +36,7 @@ def home():
 def predict(data: api_data):    
     # Convert data api to dataframe
     data = pd.DataFrame(data).set_index(0).T.reset_index(drop = True)  # type: ignore
-    data.columns = config["predictors"]
+    # data.columns = config["predictors"]
 
     # # Convert dtype
     # data = pd.concat(
@@ -51,14 +53,16 @@ def predict(data: api_data):
     # except AssertionError as ae:
     #     return {"res": [], "error_msg": str(ae)}
 
-    # Predict data
-    y_pred = model_data.predict(data)
+    # # Predict data
+    # y_pred = model_data.predict(data)
 
-    if y_pred[0] == 0:
-        y_pred = "Tidak ada api."
-    else:
-        y_pred = "Ada api."
-    return {"res" : y_pred, "error_msg": ""}
+    # if y_pred[0] == 0:
+    #     y_pred = "Tidak ada api."
+    # else:
+    #     y_pred = "Ada api."
+
+    # return {"res" : y_pred, "error_msg": ""}
+    return {"res":data}
 
 if __name__ == "__main__":
     uvicorn.run("api:app", host = "0.0.0.0", port = 8080)

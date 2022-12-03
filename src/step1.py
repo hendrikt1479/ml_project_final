@@ -23,8 +23,8 @@ def convert_tanggal(input_data: pd.DataFrame, config: dict) -> pd.DataFrame:
 def check_data(input_data: pd.DataFrame, config: dict):
     input_data = copy.deepcopy(input_data)
     config = copy.deepcopy(config)
-    # assert input_data.select_dtypes("datetime").columns.to_list() == \
-    #     config["datetime_columns"], "an error occurs in datetime column(s)."
+    assert input_data.select_dtypes("datetime").columns.to_list() == \
+        config["datetime_columns"], "an error occurs in datetime column(s)."
     assert input_data.select_dtypes("int").columns.to_list() == \
         config["int_columns"], "an error occurs in int column(s)."
     assert input_data.select_dtypes("float").columns.to_list() == \
