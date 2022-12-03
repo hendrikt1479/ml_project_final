@@ -33,7 +33,7 @@ app = FastAPI()
 
 @app.get("/")
 def home():
-    return "Hello, FastAPI up!"
+    return "Hello, FastAPI up! ... berhasilll"
 
 @app.post("/predict/")
 def predict(data : api_data):    

@@ -132,4 +132,4 @@ with st.form(key = "kebakaran_form"):
             # else:
             #     st.success("Tidak ada api-streamlit.")
             
-        st.success(result)
+        st.warning(raw_data)
