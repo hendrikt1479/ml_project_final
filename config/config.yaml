@@ -24,56 +24,56 @@ training_log_path: log/training_log.json
 
 # Nama Kolom
 new_cols:
-- UTC
-- Temperature
-- Humidity
-- TVOC
-- eCO2
-- Raw_H2
-- Raw_Ethanol
-- Pressure
-- PM10
-- PM25
-- NC05
-- NC10
-- NC25
-- CNT
-- Fire_Alarm
+- utc
+- temperature
+- humidity
+- tvoc
+- eco2
+- raw_h2
+- raw_ethanol
+- pressure
+- pm10
+- pm25
+- nc05
+- nc10
+- nc25
+- cnt
+- fire_alarm
 
 
 
 
 # tipe data
 datetime_columns:
-- UTC
+- utc
 float_columns:
-- Temperature
-- Humidity
-- Pressure
-- PM10
-- PM25
-- NC05
-- NC10
-- NC25
+- temperature
+- humidity
+- pressure
+- pm10
+- pm25
+- nc05
+- nc10
+- nc25
 int_columns:
-- TVOC
-- eCO2
-- Raw_H2
-- Raw_Ethanol
-- CNT
-- Fire_Alarm
+- tvoc
+- eco2
+- raw_h2
+- raw_ethanol
+- cnt
+- fire_alarm
 
 # Predictors and target
-target: Fire_Alarm
+target: fire_alarm
 predictors:
-- Temperature
-- Humidity
-- TVOC
-- eCO2
-- Raw_H2
-- Raw_Ethanol
-- Pressure
-- PM10
+- temperature
+- humidity
+- tvoc
+- eco2
+- raw_h2
+- raw_ethanol
+- pressure
+- pm10
 
 # Ratio Split
 test_size: 0.3

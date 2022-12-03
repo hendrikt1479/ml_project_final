@@ -16,14 +16,14 @@ with open("config/config.yaml", "r") as file:
 model_data = joblib.load(config["final_model_path"])
 
 class api_data(BaseModel):
-    Temperature : int 
-    Humidity : int 
-    Pressure : int 
-    PM10 : int 
-    TVOC : int
-    eCO2 : int
-    Raw_H2 : int
-    Raw_Ethanol : int
+    temperature : float
+    humidity : float
+    pressure : float
+    pm10 : float
+    tvoc : int
+    eco2 : int
+    raw_h2 : int
+    raw_ethanol : int
 
  
     
@@ -36,10 +36,10 @@ def home():
     return "Hello, FastAPI up! ... berhasilll"
 
 @app.post("/predict/")
-def predict(data : api_data):    
+def predict(data):    
     # Convert data api to dataframe
-    data = pd.DataFrame([data], index=[0]) #.T.reset_index(drop = True)  # type: ignore
-    data.columns = config["predictors"]
+    # data = pd.DataFrame([data], index=[0]) #.T.reset_index(drop = True)  # type: ignore
+    # data.columns = config["predictors"]
 
     # # Convert dtype
     # data = pd.concat(
