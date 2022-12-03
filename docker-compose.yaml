@@ -2,7 +2,7 @@ name: prediksi_kebakaran
 services:
   streamlit:
     build: docker/streamlit
-    image: hendrikt/ml_process_streamlit
+    image: hendrikt1479/ml_process_streamlit
     container_name: streamlit_frontend
     depends_on:
       - api
@@ -12,7 +12,7 @@ services:
       - ./:/home/
   api:
     build: docker/api
-    image: hendrikt/ml_process_api
+    image: hendrikt1479/ml_process_api
     container_name: api_backend
     ports:
       - 8080:8080
