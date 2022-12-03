@@ -15,12 +15,8 @@ col2.error("""
 Hendrik Tanaka  
 Pacmann-Desember 2022
 """)
-    
 
-
-
-
-
+st.markdown("Masukkan data data yang dibutuhkan untuk memprediksi :")
 with st.form(key = "kebakaran_form"):
     col1, col2, col3 = st.columns(3)
     # Create box for number input
@@ -119,6 +115,6 @@ with st.form(key = "kebakaran_form"):
 
            
         if result == '[1]':
-            st.warning("Prediksi akan terjadi kebakaran")
+            st.error("#### Prediksi akan terjadi kebakaran :fire:")
         else :
-            st.success("Prediksi tidak terjadi kebakaran")
+            st.success("#### Prediksi tidak terjadi kebakaran :sunglasses:")
