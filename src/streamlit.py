@@ -26,7 +26,7 @@ with st.form(key = "kebakaran_form"):
     # Create box for number input
     temperature = col1.number_input(
         label = "Temperature [C] :",
-        step = 1
+        step = 0.1
         # min_value = -40,
         # max_value = 125,
         # help = "Value range from -40 to 125"
@@ -34,7 +34,7 @@ with st.form(key = "kebakaran_form"):
 
     humidity = col1.number_input(
         label = "Humidity [%] :",
-        step = 1
+        step = 0.1
         # min_value = 0,
         # max_value = 100,
         # help = "Value range from 0 to 100"
@@ -74,7 +74,7 @@ with st.form(key = "kebakaran_form"):
 
     pressure = col3.number_input(
         label = "Pressure [hPa] :",
-        step = 1
+        step = 0.1
         # min_value = 300,
         # max_value = 1250,
         # help = "Value range from 300 to 1250"
@@ -82,11 +82,14 @@ with st.form(key = "kebakaran_form"):
 
     pm1 = col3.number_input(
         label = "PM1.0 :",
-        step = 1
+        step = 0.1
         # min_value = 0,
         # max_value = 65535,
         # help = "Value range from 0 to 65535"
     )
+
+ 
+
 
 
 
@@ -100,12 +103,12 @@ with st.form(key = "kebakaran_form"):
         raw_data = {
             "temperature": temperature,
             "humidity": humidity,
-            "pressure": pressure,
-            "pm10": pm1,
             "tvoc": tvoc,
             "eco2": eco2,
             "raw_h2": h2,
-            "raw_ethanol": ethanol
+            "raw_ethanol": ethanol,
+            "pressure": pressure,
+            "pm10": pm1
         }
 
  
@@ -113,21 +116,9 @@ with st.form(key = "kebakaran_form"):
         with st.spinner("Mengirim data ke server ..."):
             result = requests.post('http://localhost:8080/predict/', json = raw_data).json()
 
-           
-            
-            
-        # Parse the prediction result
-        # if res["error_msg"] != "":
-        #     st.error("Error saat memprediksi: {}".format(res["error_msg"]))
-        # else:
-        #     if res["res"] == "Tidak ada api.":
-        #         st.warning("Ada api-streamlit.")
-        #     else:
-        #         st.success("Tidak ada api-streamlit.")
 
-            # if res["res"] == 0:
-            #     st.warning("Ada api-streamlit.")
-            # else:
-            #     st.success("Tidak ada api-streamlit.")
-            
-        st.warning(result)
+           
+        if result == '[1]':
+            st.warning("Prediksi akan terjadi kebakaran")
+        else :
+            st.success("Prediksi tidak terjadi kebakaran")

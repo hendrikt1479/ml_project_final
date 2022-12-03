@@ -18,16 +18,12 @@ model_data = joblib.load(config["final_model_path"])
 class api_data(BaseModel):
     temperature : float
     humidity : float
-    pressure : float
-    pm10 : float
     tvoc : int
     eco2 : int
     raw_h2 : int
     raw_ethanol : int
-
- 
-    
-    
+    pressure : float
+    pm10 : float
 
 app = FastAPI()
 
@@ -36,36 +32,15 @@ def home():
     return "Hello, FastAPI up! ... berhasilll"
 
 @app.post("/predict/")
-def predict(data):    
+def predict(data: api_data):    
     # Convert data api to dataframe
-    # data = pd.DataFrame([data], index=[0]) #.T.reset_index(drop = True)  # type: ignore
-    # data.columns = config["predictors"]
+    data = pd.DataFrame(data).set_index(0).T.reset_index(drop = True)  # type: ignore
+    data.columns = config["predictors"]
 
-    # # Convert dtype
-    # data = pd.concat(
-    #     [
-    #         data[config["predictors"][:4]].astype(np.float64),  # type: ignore
-    #         data[config["predictors"][4:]].astype(np.int64)  # type: ignore
-    #     ],
-    #     axis = 1
-    # )
+    # Predict data
+    y_pred = model_data.predict(data)
 
-    # # Check range data
-    # try:
-    #     data_pipeline.check_data(data, config, True)  # type: ignore
-    # except AssertionError as ae:
-    #     return {"res": [], "error_msg": str(ae)}
-
-    # # Predict data
-    # y_pred = model_data.predict(data)
-
-    # if y_pred[0] == 0:
-    #     y_pred = "Tidak ada api."
-    # else:
-    #     y_pred = "Ada api."
-
-    # return {"res" : y_pred, "error_msg": ""}
-    return data
+    return str(y_pred)
 
 if __name__ == "__main__":
     uvicorn.run("api:app", host = "0.0.0.0", port = 8080)
