@@ -10,4 +10,4 @@ pip install --upgrade pip && \
 pip install wheel && \
 pip install -r requirements.txt
 EXPOSE 8080
-CMD ["python", "src/api.py"]
+CMD ["python", "src/api.py", "--server.port", "8080"]
