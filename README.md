@@ -23,16 +23,16 @@ Project ini dapat di bagi menjadi 5 bagian besar, yaitu :
 ![alt text](https://github.com/hendrikt1479/ml_project_final/blob/master/images/dataprep.png?raw=true)
 
 #### Data Preprocessing
-![alt text](https://github.com/hendrikt1479/ml_project_final/blob/master/images/dataprep.png?raw=true)
+![alt text](https://github.com/hendrikt1479/ml_project_final/blob/master/images/datapreprop.png?raw=true)
 
 #### Feature Engineering
-![alt text](https://github.com/hendrikt1479/ml_project_final/blob/master/images/dataprep.png?raw=true)
+![alt text](https://github.com/hendrikt1479/ml_project_final/blob/master/images/feateng.png?raw=true)
 
 #### Data Modelling, Evaluation & Hyperparameter Tunning
-![alt text](https://github.com/hendrikt1479/ml_project_final/blob/master/images/dataprep.png?raw=true)
+![alt text](https://github.com/hendrikt1479/ml_project_final/blob/master/images/model.png?raw=true)
 
 #### Deployment
-![alt text](https://github.com/hendrikt1479/ml_project_final/blob/master/images/dataprep.png?raw=true)
+![alt text](https://github.com/hendrikt1479/ml_project_final/blob/master/images/deploy.png?raw=true)
 
 
 
