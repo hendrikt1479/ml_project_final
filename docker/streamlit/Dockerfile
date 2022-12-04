@@ -10,4 +10,4 @@ pip install --upgrade pip && \
 pip install wheel && \
 pip install -r requirements.txt
 EXPOSE 8500
-CMD ["streamlit", "run", "src/streamlit.py", "--server.port", 8500]
+CMD ["streamlit", "run", "src/streamlit.py", "--server.port", "8500"]
