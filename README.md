@@ -50,3 +50,18 @@ def predict(data: api_data):
     return str(y_pred)
 ```
 
+#### Response via API
+Berikut ini adalah kode dalam file "streamlit.py" dalam function untuk mengirimkan data yang di convert dalam bentuk JSON ke api backend, untuk kemudian dikembalikan lagi dalam bentuk JSON juga dan kemudian menampilkan hasilnya.
+```bash
+       # Create loading animation while predicting
+        with st.spinner("Mengirim data ke server ..."):
+            result = requests.post('http://localhost:8080/predict/', json = raw_data).json()
+       
+        if result == '[1]':
+            st.error("#### Prediksi akan terjadi kebakaran :fire:")
+        else :
+            st.success("#### Prediksi tidak terjadi kebakaran :sunglasses:")
+```
+
+
+
