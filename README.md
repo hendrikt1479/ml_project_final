@@ -63,6 +63,21 @@ Berikut ini adalah kode dalam file "streamlit.py" dalam function untuk mengirimk
             st.success("#### Prediksi tidak terjadi kebakaran :sunglasses:")
 ```
 
-## Cara menjalankan Layanan Machine Learning di local komputer
-
+## Cara menjalankan Layanan Machine Learning di lokal komputer
+Cara menjalankan Layanan Machine Learning "Prediksi Kebakaran" ini menggunakan 2 terminal, tanpa docker. (karena docker belum berhasil di troubleshoot problemnya), adalah dengan :
+1. Buka Terminal, jalankan Virtual Environment dan jalankan "api.py"
+   ![alt text](https://github.com/hendrikt1479/ml_project_final/blob/master/images/api.png?raw=true)
+    
+2. Buka Terminal, jalankan Virtual Environment dan jalankan "streamlit.py"
+   ![alt text](https://github.com/hendrikt1479/ml_project_final/blob/master/images/streamlit.png?raw=true)
+   
+3. Buka Browser dan ketik "localhost/8500"
+   ![alt text](https://github.com/hendrikt1479/ml_project_final/blob/master/images/frontend.png?raw=true)
+   
+4. Isi data yang di minta dan klik "predict"
+   ![alt text](https://github.com/hendrikt1479/ml_project_final/blob/master/images/predict.png?raw=true)
+   
+5. Hasil prediksi akan di tampilkan.
+   ![alt text](https://github.com/hendrikt1479/ml_project_final/blob/master/images/result.png?raw=true)
+  
 
