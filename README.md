@@ -34,5 +34,19 @@ Project ini dapat di bagi menjadi 5 bagian besar, yaitu :
 #### Deployment
 ![alt text](https://github.com/hendrikt1479/ml_project_final/blob/master/images/deploy.png?raw=true)
 
+### Format Message
+#### Prediksi via API
+Berikut ini adalah kode yang digunakan dalam file "api.py" dalam function untuk menerima data yang dikirimkan dari frontend kemudian di masukkan kedalam pickle model, untuk menghasilkan y_pred.
+```bash
+@app.post("/predict/")
+def predict(data: api_data):    
+    # Convert data api to dataframe
+    data = pd.DataFrame(data).set_index(0).T.reset_index(drop = True)  # type: ignore
+    data.columns = config["predictors"]
 
+    # Predict data
+    y_pred = model_data.predict(data)
+
+    return str(y_pred)
+```
 
