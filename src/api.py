@@ -6,10 +6,6 @@ import numpy as np
 import yaml
 import joblib
 
-# import step1 as data_pipeline
-# import step2 as preprocessing
-# import step3 as modelling
-
 # load config & model
 with open("config/config.yaml", "r") as file:
     config = yaml.safe_load(file)
