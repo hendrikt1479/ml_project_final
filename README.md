@@ -63,5 +63,6 @@ Berikut ini adalah kode dalam file "streamlit.py" dalam function untuk mengirimk
             st.success("#### Prediksi tidak terjadi kebakaran :sunglasses:")
 ```
 
+## Cara menjalankan Layanan Machine Learning di local komputer
 
 
