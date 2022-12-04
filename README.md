@@ -9,6 +9,7 @@ Membuat model untuk memprediksi terjadinya kebakaran, berdasarkan beberapa varia
 
 ### Project architecture
 Berikut ini adalah diagram project secara keseluruhan :  
+
 ![alt text](https://github.com/hendrikt1479/ml_project_final/blob/master/images/project.png?raw=true)
 
 Project ini dapat di bagi menjadi 5 bagian besar, yaitu :
@@ -17,3 +18,17 @@ Project ini dapat di bagi menjadi 5 bagian besar, yaitu :
 3. Feature Engineering
 4. Data Modelling, Evaluation & Hyperparameter Tunning
 5. Deployment
+
+#### Data Preparation & EDA
+![alt text](https://github.com/hendrikt1479/ml_project_final/blob/master/images/dataprep.png?raw=true)
+
+#### Data Preprocessing
+
+
+#### Feature Engineering
+
+
+#### Data Modelling, Evaluation & Hyperparameter Tunning
+
+
+#### Deployment
