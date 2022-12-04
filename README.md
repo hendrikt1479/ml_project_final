@@ -9,5 +9,5 @@ Membuat model untuk memprediksi terjadinya kebakaran, berdasarkan beberapa varia
 
 ### Project architecture
 
-![alt text](https://github.com/hendrikt1479/ml_project_final/blob/master/images/confusion_matrix.png?raw=true)
+![alt text](https://github.com/hendrikt1479/ml_project_final/blob/master/images/project.png?raw=true)
 
